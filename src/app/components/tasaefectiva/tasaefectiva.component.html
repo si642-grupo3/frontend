@@ -1,0 +1,48 @@
+<div class="container">
+    <header class="header">
+      <div class="logo">
+        <img src="assets/logo.png" alt="FactuWeb Logo" />
+      </div>
+      <h1>FactuWeb</h1>
+      <nav>
+        <select class="dropdown">
+          <option>Factura</option>
+          <option>Letra</option>
+        </select>
+        <select class="dropdown">
+          <option>Efectiva</option>
+          <option>Nominal</option>
+        </select>
+        <button class="menu-button">Menú</button>
+      </nav>
+    </header>
+  
+    <main class="main-content">
+      <h2>Registrar Factura descontada a Tasa Efectiva</h2>
+      <h3>Datos</h3>
+      <div class="form-group">
+        <div class="form-field">
+          <label for="fechaEmision">Fecha de Emisión</label>
+          <input type="date" id="fechaEmision" />
+        </div>
+        <div class="form-field">
+          <label for="fechaPago">Fecha de pago</label>
+          <input type="date" id="fechaPago" />
+        </div>
+        <div class="form-field">
+          <label for="totalFacturado">Total Facturado</label>
+          <input type="number" id="totalFacturado" placeholder="u.m." />
+        </div>
+        <div class="form-field">
+          <label for="retencion">Retención</label>
+          <input type="number" id="retencion" placeholder="u.m." />
+        </div>
+        <div class="form-field">
+          <label for="igv">IGV</label>
+          <input type="number" id="igv" />
+        </div>
+      </div>
+      <button class="submit-button">Continuar</button>
+    </main>
+  </div>
+  

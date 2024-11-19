@@ -1,0 +1,105 @@
+<div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <img src="assets/logo.png" alt="FactuWeb Logo" />
+      </div>
+      <h1>FactuWeb</h1>
+      <button class="menu-button">Menú</button>
+    </header>
+  
+    <!-- Título principal -->
+    <h2>Factura descontada a Tasa Efectiva</h2>
+  
+    <!-- Sección de Tasa y Plazo -->
+    <section class="tasa-plazo">
+      <h3>Tasa y Plazo</h3>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="diasPorAnio">Días por año</label>
+          <select id="diasPorAnio">
+            <option value="360">360</option>
+            <option value="365">365</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="plazoTasa">Plazo de Tasa</label>
+          <input type="text" id="plazoTasa" placeholder="Plazo" />
+        </div>
+        <div class="form-field">
+          <label for="tasaEfectiva">Tasa Efectiva</label>
+          <input type="number" id="tasaEfectiva" placeholder="%" />
+        </div>
+        <div class="form-field">
+          <label for="fechaDescuento">Fecha de Descuento</label>
+          <input type="date" id="fechaDescuento" />
+        </div>
+      </div>
+    </section>
+  
+    <!-- Sección de Costes -->
+    <section class="costes">
+      <div class="costes-iniciales">
+        <h3>Costes / Gastos Iniciales</h3>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="motivoInicial">Motivo</label>
+            <select id="motivoInicial">
+              <option value="gasto1">Gasto 1</option>
+              <option value="gasto2">Gasto 2</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="valorInicial">Valor expresado en</label>
+            <select id="valorInicial">
+              <option value="porcentaje">Porcentaje</option>
+              <option value="monto">Monto</option>
+            </select>
+            <input type="number" placeholder="Valor" />
+          </div>
+          <div class="actions">
+            <button>Agregar</button>
+            <button>Cancelar</button>
+            <button>Eliminar</button>
+          </div>
+        </div>
+        <textarea placeholder="Lista de Costes Iniciales"></textarea>
+      </div>
+  
+      <div class="costes-finales">
+        <h3>Costes / Gastos Finales</h3>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="motivoFinal">Motivo</label>
+            <select id="motivoFinal">
+              <option value="gasto1">Gasto 1</option>
+              <option value="gasto2">Gasto 2</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="valorFinal">Valor expresado en</label>
+            <select id="valorFinal">
+              <option value="porcentaje">Porcentaje</option>
+              <option value="monto">Monto</option>
+            </select>
+            <input type="number" placeholder="Valor" />
+          </div>
+          <div class="actions">
+            <button>Agregar</button>
+            <button>Cancelar</button>
+            <button>Eliminar</button>
+          </div>
+        </div>
+        <textarea placeholder="Lista de Costes Finales"></textarea>
+      </div>
+    </section>
+  
+    <!-- Botones finales -->
+    <div class="actions-finales">
+      <button>Mostrar</button>
+      <button>Modificar</button>
+      <button>Nuevo</button>
+      <button>Salir</button>
+    </div>
+  </div>
+  
