@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Route, Router} from "@angular/router";
 
 @Component({
   selector: 'app-descuento',
@@ -8,6 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './descuento.component.css'
 })
 export class DescuentoComponent {
+
+  constructor(private router: Router) {
+  }
   diasPorAnio: string = '360';
   plazoTasa: string = '';
   tasaEfectiva: number | null = null;
@@ -38,5 +42,11 @@ export class DescuentoComponent {
     });
     console.log('Costes Iniciales:', this.costesIniciales);
     console.log('Costes Finales:', this.costesFinales);
+  }
+  goToResults(){
+    this.router.navigate(['/invoices/descuento/resultados']);
+  }
+  goToDashboard(){
+    this.router.navigate(['/dashboard']);
   }
 }

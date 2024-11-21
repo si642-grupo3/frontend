@@ -1,17 +1,16 @@
 <div class="section-container">
     <div class="section-heading">
-        <span class="text-primary">Bienvenido, {{userData.name}} </span>
+        <span class="text-primary">Bienvenido(a) </span>
     </div>
     <div class="description">
-        Menú de opciones
+        <h1>Menú de opciones</h1>
     </div>
     <div class="card-grid">
         <div class="card-item" *ngFor="let card of cards">
             <span class="card-icon-container" (click)="redirectTo(card.url)">
                 <img src="{{card.img}}" alt="Imagen ">
             </span>
-            <div class="card-title">{{card.title}}</div>
-            <span class="card-content">{{card.content}}</span>
+            <div class="card-title"><h2>{{card.title}}</h2></div>
         </div>
     </div>
 </div>

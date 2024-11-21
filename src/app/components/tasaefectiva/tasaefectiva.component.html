@@ -1,48 +1,47 @@
-<div class="container">
-    <header class="header">
-      <div class="logo">
-        <img src="assets/logo.png" alt="FactuWeb Logo" />
-      </div>
-      <h1>FactuWeb</h1>
-      <nav>
-        <select class="dropdown">
-          <option>Factura</option>
-          <option>Letra</option>
-        </select>
-        <select class="dropdown">
-          <option>Efectiva</option>
-          <option>Nominal</option>
-        </select>
-        <button class="menu-button">Menú</button>
-      </nav>
-    </header>
-  
-    <main class="main-content">
-      <h2>Registrar Factura descontada a Tasa Efectiva</h2>
-      <h3>Datos</h3>
-      <div class="form-group">
-        <div class="form-field">
-          <label for="fechaEmision">Fecha de Emisión</label>
-          <input type="date" id="fechaEmision" />
-        </div>
-        <div class="form-field">
-          <label for="fechaPago">Fecha de pago</label>
-          <input type="date" id="fechaPago" />
-        </div>
-        <div class="form-field">
-          <label for="totalFacturado">Total Facturado</label>
-          <input type="number" id="totalFacturado" placeholder="u.m." />
-        </div>
-        <div class="form-field">
-          <label for="retencion">Retención</label>
-          <input type="number" id="retencion" placeholder="u.m." />
-        </div>
-        <div class="form-field">
-          <label for="igv">IGV</label>
-          <input type="number" id="igv" />
-        </div>
-      </div>
-      <button class="submit-button">Continuar</button>
-    </main>
+<div class="header">
+  <div class="logo">
+    <img src="../public/images/logo-factuweb.png" alt="Logo FactuWeb" class="toolbar-logo" />
+    <span class="title">FactuWeb</span>
   </div>
-  
+  <div class="menu">
+    <h3 class="fas fa-bars" (click)="returnDashboard()">Menú</h3>
+  </div>
+</div>
+
+<div class="container">
+  <h1>Registrar Cartera de Facturas descontadas a Tasa Efectiva</h1>
+  <h2>Datos</h2>
+
+  <!-- Formulario de Registro -->
+  <form [formGroup]="facturaForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <div>
+        <label for="fechaEmision">Fecha de Emisión</label>
+        <input type="date" id="fechaEmision" formControlName="fechaEmision" />
+      </div>
+      <div>
+        <label for="fechaPago">Fecha de pago</label>
+        <input type="date" id="fechaPago" formControlName="fechaPago" />
+      </div>
+      <div>
+        <label for="totalFacturado">Total Facturado</label>
+        <input type="number" id="totalFacturado" formControlName="totalFacturado" />
+        <span class="unit">u.m.</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div>
+        <label for="retencion">Retención</label>
+        <input type="number" id="retencion" formControlName="retencion" />
+        <span class="unit">u.m.</span>
+      </div>
+      <div>
+        <label for="igv">IGV</label>
+        <input type="number" id="igv" formControlName="igv" />
+      </div>
+    </div>
+
+    <!-- Botón para enviar el formulario -->
+    <button class="button" (click)="goToDescount()">Continuar</button>
+  </form>
+</div>
