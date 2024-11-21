@@ -1,0 +1,47 @@
+#mainTitle_Wallet{
+    color: #005035;
+    font-weight: bold;
+    text-align: center;
+    font-size: 70px;
+}
+
+#inputId_Wallet{
+    margin-right: 3%;
+    width: 5%;
+}
+
+#searchButton_Wallet{
+    background-color: #008f5f;
+    color: white;
+    width: 5%;
+    border-radius: 10px;
+}
+
+.greenText{
+    color: #008f5f;
+}
+
+table{
+    margin: 0 2%;
+    width: 96%;
+    border: 1px solid black;
+}
+
+th{
+    border: 1px solid black;
+    background-color: #008f5f;
+    color: white;
+}
+
+td{
+    background-color: #9bffd9;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+table, th, td{
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-collapse: collapse;
+}

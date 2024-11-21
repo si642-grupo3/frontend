@@ -1,0 +1,43 @@
+#mainTitle_Portfolio{
+    color: #005035;
+    font-weight: bold;
+    text-align: center;
+    font-size: 70px;
+}
+
+#searchButton_Portfolio{
+    color: white;
+    background-color: #008f5f;
+    width: 5%;
+    border-radius: 10px;
+}
+
+.greenText{
+    color: #008f5f;
+}
+
+input{
+    color: #008f5f;
+    margin: 0 0.5%;
+}
+
+table{
+    margin: 0 2%;
+    width: 96%;
+}
+
+th{
+    color: white;
+    background-color: #00b640;
+}
+
+td{
+    text-align: center;
+    padding: 0.7% 0;
+}
+
+table, th, td{
+    border-left: 2px solid #00b640;
+    border-right: 2px solid #00b640;
+    border-collapse: collapse;
+}

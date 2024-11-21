@@ -1,0 +1,38 @@
+<h1 id="mainTitle_Portfolio">Lista de Carteras de Factura Descontadas</h1>
+
+<div style="margin-left: 2%; margin-bottom: 2%">
+    <h2 class="greenText">Filtro</h2>
+    <p class="greenText">Fecha de descuento</p>
+
+    <p style="color: #008f5f;">
+        <input type="date"> To <input type="date">
+        <button id="searchButton_Portfolio">Filtrar</button>
+    </p>
+</div>
+
+<table>
+    <tr>
+        <th>N</th>
+        <th>Fecha Descuento</th>
+        <th>Nro Facturas</th>
+        <th>Valor Nominal</th>
+        <th>Valor Recibido(VR)</th>
+        <th>TCEA(%)</th>
+        <th>Estado</th>
+    </tr>
+    @for (portfolio of portfoliosList; track i){
+        <tr>
+            <td>{{portfolio.id}}</td>
+            <td>{{portfolio.fecha_descuento}}</td>
+            <td>{{portfolio.reportes.length}}</td>
+            <td>{{listVN[portfolio.id-1].toFixed(2)}}</td>
+            <td>{{listVR[portfolio.id-1].toFixed(2)}}</td>
+            <td>{{portfolio.tcea_cartera.toFixed(2)}}</td>
+            @if (portfoliosList.fecha_descuento){
+                <td><div>Pendiente</div></td>
+            } @else {
+                <td><div>Vencido</div></td>
+            }
+        </tr>
+    }
+</table>
