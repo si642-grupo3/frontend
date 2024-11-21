@@ -1,0 +1,46 @@
+<div class="mat-typography">
+
+    <mat-toolbar color="primary">
+        <img src="/images/logo-factuweb.png" alt="Logo" class="toolbar-logo" height="224" width="224"/>
+        <span class="toolbar-title">FactuWeb</span>
+    </mat-toolbar>
+
+    <form (ngSubmit)="onLogin()" [formGroup]="loginForm">
+        <mat-card class="login-card">
+            <mat-card-header>
+                <mat-card-title>Iniciar Sesión</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <div class="form-fields">
+
+                    <mat-form-field class="full-width">
+                        <input matInput formControlName="email" name="email" placeholder="Correo" required email />
+                        <mat-error *ngIf="submitted && loginForm.get('email')?.hasError('required')">
+                            El correo es obligatorio.
+                        </mat-error>
+                        <mat-error *ngIf="submitted && loginForm.get('email')?.hasError('email')">
+                            El correo debe ser válido.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password" name="password" placeholder="Contraseña" required/>
+                        <mat-error *ngIf="submitted && loginForm.get('password')?.hasError('required')">
+                            La contraseña es obligatoria.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button class="login-btn" mat-raised-button color="primary" type="submit">
+                    Ingresar
+                </button>
+                <button class="register-link-btn" mat-button type="button" (click)="navigateToRegister()">
+                    ¿No tienes cuenta? Regístrate
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+</div>

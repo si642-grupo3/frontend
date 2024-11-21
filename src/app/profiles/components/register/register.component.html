@@ -1,0 +1,93 @@
+<div class="mat-typography">
+
+    <mat-toolbar color="primary">
+        <img src="/images/logo-factuweb.png" alt="Logo" class="toolbar-logo" height="224" width="224"/>
+        <span class="toolbar-title">FactuWeb</span>
+    </mat-toolbar>
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+        <mat-card class="register-card">
+            <mat-card-header>
+                <mat-card-title>Registrarse</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <div class="form-fields">
+
+                    <mat-form-field class="full-width" >
+                        <input matInput formControlName="nombre" name="nombre" placeholder="Nombre"/>
+                        <mat-error *ngIf="submitted && registerForm.get('nombre')?.hasError('required')">
+                            El nombre es obligatorio.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <input matInput formControlName="apellido" name="apellido" placeholder="Apellido"/>
+                        <mat-error *ngIf="submitted && registerForm.get('apellido')?.hasError('required')">
+                            El apellido es obligatorio.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <input matInput formControlName="ruc" name="ruc" placeholder="RUC"/>
+                        <mat-error *ngIf="submitted && registerForm.get('ruc')?.hasError('required')">
+                            El RUC es obligatorio.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <input matInput formControlName="telefono" name="telefono" placeholder="Teléfono"/>
+                        <mat-error *ngIf="submitted && registerForm.get('telefono')?.hasError('required')">
+                            El teléfono es obligatorio.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <input matInput formControlName="direccion" name="direccion" placeholder="Dirección"/>
+                        <mat-error *ngIf="submitted && registerForm.get('direccion')?.hasError('required')">
+                            La dirección es obligatoria.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <input matInput formControlName="email" name="email" placeholder="Correo" required email />
+                        <mat-error *ngIf="submitted && registerForm.get('email')?.hasError('required')">
+                            El correo es obligatorio.
+                        </mat-error>
+                        <mat-error *ngIf="submitted && registerForm.get('email')?.hasError('email')">
+                            El correo debe ser válido.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <input matInput [type]="hidePassword ? 'password' : 'text'"  formControlName="password" name="password" placeholder="Contraseña" required/>
+                        <mat-error *ngIf="submitted && registerForm.get('password')?.hasError('required')">
+                            La contraseña es obligatoria.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <input matInput [type]="hidePassword ? 'password' : 'text'"  formControlName="confirmPassword" placeholder="Confirmar Contraseña" required/>
+                        <mat-error *ngIf="submitted && registerForm.get('confirmPassword')?.hasError('required')">
+                            La confirmación de la contraseña es obligatoria.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-checkbox formControlName="termsAccepted">
+                        Acepto los términos y condiciones
+                    </mat-checkbox>
+
+                    <mat-checkbox formControlName="privacyAccepted">
+                        Acepto los términos de privacidad
+                    </mat-checkbox>
+                </div>
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button class="register-btn" mat-raised-button color="primary" type="submit">
+                    Registrar
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+</div>

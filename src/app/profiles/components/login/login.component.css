@@ -1,0 +1,125 @@
+.mat-typography {
+    font-family: 'Roboto', sans-serif;
+}
+
+.full-width {
+    width: 100%;
+    color: lightgray;
+}
+
+mat-toolbar {
+    background-color: #248942;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.toolbar-logo {
+    height: 40px;
+    width: auto;
+}
+
+.toolbar-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.login-card {
+    margin-top: 50px;
+}
+
+mat-card {
+    margin: 20px auto;
+    max-width: 700px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+mat-card-header {
+    background-color: #248942;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.form-fields input {
+    color: black;
+    padding: 5px;
+}
+
+mat-card-title {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+mat-form-field {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+mat-error {
+    font-size: 12px;
+    color: #f44336;
+    margin-top: 4px;
+}
+
+mat-card-actions {
+    text-align: center;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.login-btn:not([disabled]) {
+    background-color: #248942;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:not([disabled]):hover {
+    background-color: #1f6e35;
+}
+
+.register-link-btn {
+    color: #248942;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+    text-transform: none;
+    display: inline-block;
+}
+
+.register-link-btn:hover {
+    text-decoration: underline;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    mat-card {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    mat-card-header {
+        font-size: 18px;
+        padding: 12px;
+    }
+
+    .login-btn {
+        padding: 10px;
+    }
+
+    .register-link-btn {
+        font-size: 12px;
+    }
+}
