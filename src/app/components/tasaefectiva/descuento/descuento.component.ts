@@ -121,7 +121,7 @@ export class DescuentoComponent {
     if (this.invoiceForm.valid){
       const formValues = this.invoiceForm.value;
 
-      let plazoTasaValue = 0;
+      let plazoTasaValue: number;
       switch (formValues.plazoTasa) {
         case 'diario':
           plazoTasaValue = 1;
@@ -172,7 +172,7 @@ export class DescuentoComponent {
     }else {
       console.log('Formulario no válido');
       this.invoiceForm.markAllAsTouched();
-    };
+    }
   }
   goToResults(){
     this.router.navigate(['/invoices/descuento/resultados']);
