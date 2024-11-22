@@ -22,17 +22,15 @@ export class LoginComponent {
     loginForm: FormGroup;
     submitted = false;
     hidePassword: boolean = true;
+    loginError: string | null = null;
 
     constructor(private fb: FormBuilder, private authService: UserService, // Servicio para manejar autenticación
                 private router: Router) {
         // Crear formulario para login
         this.loginForm = this.fb.group({
-            email: ['', [Validators.required, Validators.email]],
-            password: ['', [Validators.required, Validators.minLength(6)]]
+            email: ['', [Validators.required]],
+            password: ['', [Validators.required]]
         });
-    }
-
-    ngOnInit(): void {
     }
 
     onLogin(): void {
@@ -41,14 +39,19 @@ export class LoginComponent {
         if (this.loginForm.valid) {
             const {email, password} = this.loginForm.value;
 
-            console.log('Intentando iniciar sesión con:', email, password);
+            console.log('Intentando iniciar sesión con:', email, password); //to be removed
 
             // Llamar al servicio de autenticación
             this.authService.login(email, password).subscribe((response) => {
-                console.log('Inicio de sesión exitoso', response);
+                console.log('Inicio de sesión exitoso', response); //to be removed
+
+                sessionStorage.setItem('user', JSON.stringify(response));
+                console.log(sessionStorage.getItem('user')); //to be removed
+                this.loginError = null;
                 this.router.navigate(['/dashboard']);
             }, (error) => {
                 console.error('Error al iniciar sesión', error);
+                this.loginError = 'Credenciales incorrectas. Por favor, inténtelo de nuevo.';
             });
         } else {
             console.log('Formulario no válido');

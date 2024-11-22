@@ -4,6 +4,15 @@
         <!-- Datos de la Factura -->
         <div class="first-section-inputs">
             <h4>Datos de la Factura</h4>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Nª Factura</mat-label>
+                <input matInput type="text" formControlName="numero" >
+                <mat-error *ngIf="submitted && invoiceForm.get('numero')?.hasError('required')">
+                    El numero facturado es obligatorio.
+                </mat-error>
+            </mat-form-field>
+
             <mat-form-field appearance="outline">
                 <mat-label>Fecha de Emisión</mat-label>
                 <input matInput [matDatepicker]="fePicker" formControlName="fechaEmision">
@@ -155,7 +164,7 @@
                     <input matInput type="number" formControlName="valorInicial" step="0.01">
                 </mat-form-field>
 
-                <button mat-stroked-button color="primary" (click)="agregarCoste('inicial')">Agregar</button>
+                <button [disabled]="true" mat-stroked-button color="primary" (click)="agregarCoste('inicial')">Agregar</button>
             </div>
             <div *ngFor="let costeinical of costesIniciales">
                 <div class="costes-lista">{{ costeinical.motivo }} - {{ costeinical.valor }}</div>
@@ -179,7 +188,7 @@
                     <input matInput type="number" formControlName="valorFinal" step="0.01">
                 </mat-form-field>
 
-                <button mat-stroked-button color="primary" (click)="agregarCoste('final')">Agregar</button>
+                <button [disabled]="true" mat-stroked-button color="primary" (click)="agregarCoste('final')">Agregar</button>
             </div>
             <div *ngFor="let costefinal of costesFinales">
                 <div class="costes-lista">{{ costefinal.motivo }} - {{ costefinal.valor }}</div>
@@ -197,11 +206,12 @@
 
     <div  class="resultados">
 
-        <h3>Valor total a recibir por la factura</h3>
-        {{sumaValores}}
+        <h3>Valor Recibido</h3>
+        <h4>{{valorRecibido}}</h4>
+        <h3>Valor Entregado</h3>
+        <h4>{{valorEntregado}}</h4>
         <h3>Tasa de coste efectiva anual</h3>
-        {{sumaValores}}
-
+        <h4>{{tcea *100}} %</h4>
         <button mat-stroked-button (click)="createInvoice()">Guardar</button>
     </div>
 </div>
