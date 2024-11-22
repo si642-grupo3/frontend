@@ -1,0 +1,52 @@
+<mat-toolbar color="primary">
+    <img src="https://img.icons8.com/arcade/64/online-payment-.png" alt="Logo" class="toolbar-logo" height="224" width="224"/>
+    <span class="toolbar-title">FactuWeb</span>
+</mat-toolbar>
+
+<div class="portfolio">
+    <h1 id="mainTitle_Portfolio">Cartera de Facturas Descontadas</h1>
+
+    <div style="margin-left: 2%; margin-bottom: 2%">
+        <h2 class="greenText">Filtro</h2>
+        <p class="greenText">Fecha de descuento</p>
+
+        <p style="color: #008f5f;">
+            <input type="date"> To <input type="date">
+            <button id="searchButton_Portfolio">Filtrar</button>
+        </p>
+    </div>
+
+    <table>
+        <tr>
+            <th>N</th>
+            <th>Fecha Descuento</th>
+            <th>Nro Facturas</th>
+            <th>Valor Nominal</th>
+            <th>Valor Recibido(VR)</th>
+            <th>TCEA(%)</th>
+            <th>Estado</th>
+        </tr>
+        @for (portfolio of portfoliosList; track i){
+            <tr>
+                <td>{{portfolio.id}}</td>
+                <td>{{portfolio.fecha_descuento}}</td>
+                <td>{{portfolio.reportes.length}}</td>
+                <td>{{listVN[portfolio.id-1].toFixed(2)}}</td>
+                <td>{{listVR[portfolio.id-1].toFixed(2)}}</td>
+                <td>{{portfolio.tcea_cartera.toFixed(2)}}</td>
+                @if (portfoliosList.fecha_descuento){
+                    <td><div>Pendiente</div></td>
+                } @else {
+                    <td><div>Vencido</div></td>
+                }
+            </tr>
+        }
+    </table>
+
+    <div class="btn-div">
+        <button class="return-btn" mat-raised-button color="primary" [routerLink]="'/dashboard'">
+            Regresar
+        </button>
+    </div>
+
+</div>

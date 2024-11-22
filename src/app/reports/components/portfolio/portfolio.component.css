@@ -1,0 +1,93 @@
+.portfolio{
+    font-family: 'Roboto', sans-serif;
+    padding-top: 3rem;
+}
+
+mat-toolbar {
+    background-color: #248942;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.toolbar-logo {
+    height: 40px;
+    width: auto;
+}
+
+.toolbar-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+#mainTitle_Portfolio{
+    color: #005035;
+    font-weight: bold;
+    text-align: center;
+    font-size: 3rem;
+}
+
+#searchButton_Portfolio{
+    color: white;
+    background-color: #248942;
+    width: 5%;
+    border-radius: 10px;
+}
+
+.greenText{
+    color: #248942;
+}
+
+input{
+    color: #248942;
+    margin: 0 0.5%;
+}
+
+table{
+    margin: 0 2%;
+    width: 96%;
+}
+
+th{
+    color: white;
+    background-color: #248942;
+}
+
+td{
+    text-align: center;
+    padding: 0.7% 0;
+}
+
+table, th, td{
+    border-left: 2px solid #248942;
+    border-right: 2px solid #248942;
+    border-collapse: collapse;
+}
+
+.btn-div{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.return-btn {
+    padding: 12px;
+    width: 200px;
+    font-size: 16px;
+    margin: 0 auto;
+}
+
+.return-btn:not([disabled]) {
+    background-color: #248942;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.return-btn:not([disabled]):hover {
+    background-color: #1f6e35;
+}
