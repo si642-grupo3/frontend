@@ -1,9 +1,15 @@
+<mat-toolbar color="primary">
+    <img src="https://img.icons8.com/arcade/64/online-payment-.png" alt="Logo" class="toolbar-logo" height="224" width="224"/>
+    <span class="toolbar-title">FactuWeb</span>
+    <span class="spacer"></span>
+    <button class ="logout-btn" (click)="logout()">
+        <img width="32" height="32" src="https://img.icons8.com/windows/32/exit.png" alt="exit"/>
+    </button>
+</mat-toolbar>
+
 <div class="section-container">
     <div class="section-heading">
-        <span class="text-primary">Bienvenido(a) </span>
-    </div>
-    <div class="description">
-        <h1>Menú de opciones</h1>
+        <span class="text-primary">Bienvenido(a) {{userName}} !</span>
     </div>
     <div class="card-grid">
         <div class="card-item" *ngFor="let card of cards">

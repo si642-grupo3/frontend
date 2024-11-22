@@ -1,0 +1,59 @@
+<mat-toolbar color="primary">
+    <img src="https://img.icons8.com/arcade/64/online-payment-.png" alt="Logo" class="toolbar-logo" height="224" width="224"/>
+    <span class="toolbar-title">FactuWeb</span>
+</mat-toolbar>
+
+<div class="reports">
+    <h1 id="mainTitle_Wallet">Cartera de Reportes de Facturas Descontadas</h1>
+
+    <table>
+        <tr>
+            <th>N</th>
+            <th>Fecha Giro</th>
+            <th>Val Nom.</th>
+            <th>Fecha Ven.</th>
+            <th>Dias</th>
+            <th>Retención</th>
+            <th>TE%</th>
+            <th>d%</th>
+            <th>Descuento</th>
+            <th>Coste Ini.</th>
+            <th>Coste Fin.</th>
+            <th>Val. Neto.</th>
+            <th>Val. Rec.</th>
+            <th>Val. Ent.</th>
+            <th>TCEA%</th>
+        </tr>
+        @for (report of walletReportList; track i){
+            <tr>
+                <td>{{report.id}}</td>
+                <td>{{report.fecha_giro}}</td>
+                <td>{{report.valor_nominal.toFixed(2)}}</td>
+                <td>{{report.fecha_vencimiento}}</td>
+                <td>{{report.dias_transcurridos}}</td>
+                <td>{{report.retencion.toFixed(2)}}</td>
+                <td>{{report.tasa_efectiva.toFixed(2)}}</td>
+                <td>{{report.tasa_descuento.toFixed(2)}}</td>
+                <td>{{report.descuento.toFixed(2)}}</td>
+                <td>{{report.coste_inicial.toFixed(2)}}</td>
+                <td>{{report.coste_final.toFixed(2)}}</td>
+                <td>{{report.valor_neto.toFixed(2)}}</td>
+                <td>{{report.valor_recibido.toFixed(2)}}</td>
+                <td>{{report.valor_entregado.toFixed(2)}}</td>
+                <td>{{report.tcea.toFixed(2)}}</td>
+            </tr>
+        }
+    </table>
+
+
+    <h1 class="greenText" style="text-align: right; padding-right: 3%">Total S/.{{total.toFixed(2)}}</h1>
+    <h1 class="greenText" style="text-align: right; padding-right: 3%">TCEA {{tcea.toFixed(2)}}%</h1>
+
+    <div class="btn-div">
+        <button class="return-btn" mat-raised-button color="primary" [routerLink]="'/dashboard'">
+            Regresar
+        </button>
+    </div>
+</div>
+
+

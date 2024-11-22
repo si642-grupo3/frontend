@@ -6,17 +6,16 @@ import {RegisterComponent} from "./profiles/components/register/register.compone
 import {LoginComponent} from "./profiles/components/login/login.component";
 import {DescuentoComponent} from "./components/tasaefectiva/descuento/descuento.component";
 import {ResultadosComponent} from "./components/tasaefectiva/resultados/resultados.component";
+import {ReportComponent} from "./reports/components/report/report.component";
+import {PortfolioComponent} from "./reports/components/portfolio/portfolio.component";
 
 export const routes: Routes = [
 
     {path: 'dashboard', component: DashboardComponent},
-    {path: 'dashboard/reports',component: AppComponent  },
-    {path: 'dashboard/list', component: AppComponent},
+    {path: 'dashboard/reports',component: ReportComponent  },
+    {path: 'dashboard/list', component: PortfolioComponent},
     {path: 'dashboard/invoices', component: TasaefectivaComponent},
-    {path: 'dashboard/profile', component: AppComponent},
     {path: 'register', component: RegisterComponent},
     {path: 'login', component: LoginComponent},
-    {path: '', pathMatch: 'full', redirectTo: 'register'}, //to change
-    {path: 'invoices/descuento', component: DescuentoComponent},
-    {path: 'invoices/descuento/resultados', component: ResultadosComponent}
+    {path: '', pathMatch: 'full', redirectTo: 'login'},
 ];
