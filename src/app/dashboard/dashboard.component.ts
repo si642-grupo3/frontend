@@ -17,7 +17,7 @@ export class DashboardComponent {
       "title": "Cartera de Facturas",
       "content": "Print bills, manage orders, export reports, and streamline cashier operations efficiently.",
       "img": "https://img.icons8.com/?size=100&id=442b7zv4iMmN&format=png&color=000000",
-      "url": "/dashboard/invoices"
+      "url": "/invoices/descuento"
     },
     {
       "title": "Reporte",
