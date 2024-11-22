@@ -1,16 +1,49 @@
 .section-container {
     padding: 4rem 0 2rem 1rem;
     text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+mat-toolbar {
+    background-color: #248942;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.toolbar-logo {
+    height: 40px;
+    width: auto;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.toolbar-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.logout-btn{
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
 }
 
 .section-heading {
     font-weight: bold;
     font-size: 1.875rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .text-primary {
-    color: #1F2937;
+    color: #248942;
 }
 
 .text-accent {
@@ -42,8 +75,8 @@
 }
 
 .card-title {
-    color: #1F2937;
-    font-size: 1.25rem;
+    color: #248942;
+    font-size: 1rem;
     font-weight: 500;
     margin-bottom: 0.75rem;
 }
